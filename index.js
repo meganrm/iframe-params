@@ -1,6 +1,7 @@
 (function (module) {
-    var iframeParams = {}
+    var iframeParams = {};
     iframeParams.createUrl = function createUrl(iframe, baseUrl, params) {
+        var queryString;
         if (params) {
             queryString = Object.keys(params).reduce(function (acc, key) {
                 acc = acc + '&' + key + '=' + params[key];
@@ -19,6 +20,6 @@
         iframe.src = newSrc;
     }
 
-    
+
     module.iframeParams = iframeParams;
 })(window);
